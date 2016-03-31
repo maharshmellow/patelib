@@ -5,7 +5,7 @@
 
 ## USAGE (in python)
 ```python
->>> from numbers.prime import isPrime
+>>> from number.prime import isPrime
 >>> isPrime(59)
 True
 ```
