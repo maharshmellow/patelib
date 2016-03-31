@@ -15,7 +15,7 @@ Complete either method again
 
 ## USAGE (in python)
 ```python
->>> from patelib.numbers.isPrime import *
+>>> from patelib.number.isPrime import *
 >>> isPrime(59)
 True
 ```
