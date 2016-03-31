@@ -1,3 +1,5 @@
+import math
+
 def isPrime(n):
     """Checks if the number n is a prime number"""
     if n % 2 == 0 and n > 2:
