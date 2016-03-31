@@ -7,5 +7,5 @@ setup(name='patelib',
       author='Maharsh Patel',
       author_email='maharsh@live.ca',
       license='MIT',
-      packages=['numbers'],
+      packages=['number'],
       zip_safe=False)
