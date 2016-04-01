@@ -7,7 +7,7 @@
 ### Without PIP
 
 `$ git clone https://github.com/maharshmellow/patelib.git` <br>
-`$ cd patelib`
+`$ cd patelib`<br>
 `$ python3 setup.py install`
 
 **To Update:**
