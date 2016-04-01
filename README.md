@@ -21,5 +21,5 @@ True
 ```
 ---
 
-# Contents
-COMING SOON 
+## CONTRIBUTING
+[Read this before contributing](https://github.com/blog/1506-closing-issues-via-pull-requests)
