@@ -7,7 +7,7 @@
 ### Without PIP
 
 `$ git clone https://github.com/maharshmellow/patelib.git` <br>
-`$ cd patelib`
+`$ cd patelib`<br>
 `$ python3 setup.py install`
 
 **To Update:**
@@ -19,3 +19,7 @@ Complete either method again
 >>> isPrime(59)
 True
 ```
+---
+
+## CONTRIBUTING
+[Read this before contributing](https://github.com/blog/1506-closing-issues-via-pull-requests)
