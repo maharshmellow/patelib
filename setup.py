@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='patelib',
-      version='0.3'
+      version='0.3',
       description='Collection of Random Useful Stuff',
       url='http://github.com/maharshmellow/patelib',
       author='Maharsh Patel',
