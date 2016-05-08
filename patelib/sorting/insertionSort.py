@@ -1,4 +1,12 @@
 def insertionSort(data):
+    """
+    Time Complexity
+        Best: O(n)
+        Average: O(n^2)
+        Worst: O(n^2)
+    Space Complexity
+        Worst: O(1)
+    """
     for index in range(1, len(data)):
         temp = data[index]
         position = index
