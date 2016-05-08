@@ -1,4 +1,12 @@
 def bubbleSort(data):
+    """
+    Time Complexity
+        Best: O(n)
+        Average: O(n^2)
+        Worst: O(n^2)
+    Space Complexity
+        Worst: O(1)
+    """
     exchange = True
     last = len(data)-1
 
