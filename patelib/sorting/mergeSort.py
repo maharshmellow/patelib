@@ -33,4 +33,3 @@ def mergeSort(data):
     right = mergeSort(data[middle:])
 
     return merge(left, right)
-print(mergeSort([10, 1, 29, 3, 59, 1, 12, 0, 12, 2, 3]))
