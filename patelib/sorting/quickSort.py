@@ -1,4 +1,12 @@
 def quickSort(data):
+    """
+    Time Complexities
+        Best: O(nlog(n))
+        Average: O(nlog(n))
+        Worst: O(n^2)
+    Space Complexities
+        Worst: O(log(n))
+    """
     return quickSort_helper(data, 0, len(data)-1)
     
 def quickSort_helper(data, first, last):
