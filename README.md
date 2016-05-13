@@ -19,7 +19,4 @@ Complete either method again
 >>> isPrime(59)
 True
 ```
----
 
-## CONTRIBUTING
-[Read this before contributing](https://github.com/blog/1506-closing-issues-via-pull-requests)
