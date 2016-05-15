@@ -7,5 +7,5 @@ setup(name='patelib',
       author='Maharsh Patel',
       author_email='patel@maharsh.net',
       license='MIT',
-      packages=['patelib', 'patelib.number', 'patelib.sorting', 'patelib.adt', 'patelib.file', 'patelib.searching', 'patelib.strings', 'patelib.images', 'patelib.others'],
+      packages=['patelib', 'patelib.number', 'patelib.sorting', 'patelib.adt', 'patelib.file', 'patelib.searching', 'patelib.strings', 'patelib.images', 'patelib.others', 'patelib.input'],
       zip_safe=False)
