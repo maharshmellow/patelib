@@ -7,10 +7,12 @@ class Stack:
         self.__items.append(item)
 
     def pop(self):
-        return(self.__items.pop())
+        if not self.isEmpty():
+            return(self.__items.pop())
 
     def peek(self):
-        return(self.__items[len(self.__items)-1])
+        if not self.isEmpty():
+            return(self.__items[len(self.__items)-1])
 
     def isEmpty(self):
         return(len(self.__items) == 0)
