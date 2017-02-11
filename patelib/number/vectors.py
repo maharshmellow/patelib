@@ -2,8 +2,8 @@ import math
 
 class Vector2D:
     def __init__(self, x, y):
-        self.__x=x
-        self.__y=y
+        self.__x = x
+        self.__y = y
 
     def x(self):
         return self.__x
@@ -19,11 +19,11 @@ class Vector2D:
 
     def add(self, v):
         if isinstance(v, Vector2D):
-            self.__x+=v.x()
-            self.__y+=v.y()
+            self.__x += v.x()
+            self.__y += v.y()
         else:
-            self.__x+=v
-            self.__y+=v
+            self.__x += v
+            self.__y += v
 
     def sub(self, v):
         self.add(-v)
@@ -32,8 +32,8 @@ class Vector2D:
         if isinstance(v, Vector2D):
             print("patelib>number>vectors>Vector2D>mul(): Scalar only; use .dot()")
         else:
-            self.__x*=v;
-            self.__y*=v;
+            self.__x *= v;
+            self.__y *= v;
 
     def div(self, v):
         if isinstance(v, Vector2D):
@@ -50,3 +50,6 @@ class Vector2D:
     def unit(self):
         m=mag()
         return Vector2D(self.__x/m, self.__y/m)
+
+    def orth(self):
+        return (Vector2D(-self.__y, self.__x), Vector2D(self.__y, -self.__x))
