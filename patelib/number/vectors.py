@@ -32,7 +32,7 @@ class Vector2D:
         if isinstance(v, Vector2D):
             self.add(v.neg())
         elif isinstance(v, Vector3D):
-            self.add(v.project2D.neg())
+            self.add(v.project2D().neg())
         else:
             self.add(-v);
 
@@ -86,6 +86,9 @@ class Vector3D:
     def msgSq(self):
         return self.__x**2+self.__y**2+self.__z**2
 
+    def neg(self):
+        return Vector3D(-self.__x, -self.__y, -self.__z)
+
     def add(self, v):
         if isinstance(v, Vector3D):
             self.__x += v.x()
@@ -100,3 +103,43 @@ class Vector3D:
             self.__x += v
             self.__y += v
             self.__z += z
+
+    def sub(self, v):
+        if isinstance(v, Vector3D):
+            self.add(v.neg())
+        elif isinstance(v, Vector2D):
+            self.add(v.project3D().neg())
+        else:
+            self.add(-v);
+
+    def mul(self, v):
+        if isinstance(v, Vector2D) or isinstance(v, Vector3D):
+            print("patelib>number>vectors>Vector3D>mul(): Scalar only; use .dot() or .cross()")
+        else:
+            self.__x *= v;
+            self.__y *= v;
+            self.__z *= v;
+
+    def div(self, v):
+        if isinstance(v, Vector2D) or isinstance(v, Vector3D):
+            print("patelib>number>vectors>Vector3D>div(): Scalar only")
+        else:
+            self.mul(-v)
+
+    def dot(self, v):
+        if not isinstance(v, Vector3D):
+            print("patelib>number>vectors>Vector3D>dot(): Must be between two 3D vectors")
+        else:
+            return self.__x*v.x()+self.__y*v.y()+self.__z*v.z()
+
+    def unit(self):
+        m=mag()
+        return Vector2D(self.__x/m, self.__y/m, self.__z/m)
+
+    def project2D(self, plane="xy"):
+        if plane == "xz":
+            return Vector2D(self.__x, self.__z)
+        elif plane == "yz":
+            return Vector2D(self.__y, self.__z)
+        else:
+            return Vector2D(self.__x, self.__y)
