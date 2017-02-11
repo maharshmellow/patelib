@@ -1,9 +1,9 @@
 import math
 
-class vector2D:
+class Vector2D:
     def __init__(self):
-        self.__x = 0
-        self.__y = 0
+        self.__x=0
+        self.__y=0
     def x(self):
         return self.__x
     def y(self):
@@ -13,22 +13,28 @@ class vector2D:
     def msgSq(self):
         return self.__x**2+self.__y**2
     def add(self, v):
-        if isinstance(v, vector2D):
-            self.__x += v.x()
-            self.__y += v.y()
+        if isinstance(v, Vector2D):
+            self.__x+=v.x()
+            self.__y+=v.y()
         else:
-            self.__x += v
-            self.__y += v
+            self.__x+=v
+            self.__y+=v
     def sub(self, v):
         self.add(-v)
     def mul(self, v):
-        if isinstance(v, vector2D):
-            print("patelib>number>vectors>Vector2D>mul(): Scalar only; use .cross() or .dot()")
+        if isinstance(v, Vector2D):
+            print("patelib>number>vectors>Vector2D>mul(): Scalar only; use .dot()")
         else:
-            self.__x *= v;
-            self.__y *= v;
+            self.__x*=v;
+            self.__y*=v;
     def div(self, v):
-        if isinstance(v, vector2D):
-            print("patelib>number>vectors>Vector2D>mul(): Scalar only; use .cross() or .dot()")
+        if isinstance(v, Vector2D):
+            print("patelib>number>vectors>Vector2D>div(): Scalar only")
         else:
             self.mul(-v)
+    def dot(self, v):
+        if not isinstance(v, Vector2D):
+            print("patelib>number>vectors>Vector2D>dot(): Must be between two 2D vectors")
+        else:
+            return self.__x*v.x()+self.__y*v.y()
+    def 
