@@ -13,5 +13,22 @@ class vector2D:
     def msgSq(self):
         return self.__x**2+self.__y**2
     def add(self, v):
-        self.__x += v.x()
-        self.__y += v.y()
+        if isinstance(v, vector2D):
+            self.__x += v.x()
+            self.__y += v.y()
+        else:
+            self.__x += v
+            self.__y += v
+    def sub(self, v):
+        self.add(-v)
+    def mul(self, v):
+        if isinstance(v, vector2D):
+            print("patelib>number>vectors>Vector2D>mul(): Scalar only; use .cross() or .dot()")
+        else:
+            self.__x *= v;
+            self.__y *= v;
+    def div(self, v):
+        if isinstance(v, vector2D):
+            print("patelib>number>vectors>Vector2D>mul(): Scalar only; use .cross() or .dot()")
+        else:
+            self.mul(-v)
