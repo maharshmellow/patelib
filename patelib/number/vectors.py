@@ -17,6 +17,9 @@ class Vector2D:
     def msgSq(self):
         return self.__x**2+self.__y**2
 
+    def neg(self):
+        return Vector2D(-self.__x, -self.__y);
+
     def add(self, v):
         if isinstance(v, Vector2D):
             self.__x += v.x()
@@ -26,17 +29,22 @@ class Vector2D:
             self.__y += v
 
     def sub(self, v):
-        self.add(-v)
+        if isinstance(v, Vector2D):
+            self.add(v.neg())
+        elif isinstance(v, Vector3D):
+            self.add(v.project2D.neg())
+        else:
+            self.add(-v);
 
     def mul(self, v):
-        if isinstance(v, Vector2D):
+        if isinstance(v, Vector2D) or isinstance(v, Vector3D):
             print("patelib>number>vectors>Vector2D>mul(): Scalar only; use .dot()")
         else:
             self.__x *= v;
             self.__y *= v;
 
     def div(self, v):
-        if isinstance(v, Vector2D):
+        if isinstance(v, Vector2D) or isinstance(v, Vector3D):
             print("patelib>number>vectors>Vector2D>div(): Scalar only")
         else:
             self.mul(-v)
@@ -54,7 +62,7 @@ class Vector2D:
     def orth(self):
         return (Vector2D(-self.__y, self.__x), Vector2D(self.__y, -self.__x))
 
-    def to3D(self):
+    def project3D(self):
         return Vector3D(self.__x, self.__y, 0)
 
 class Vector3D:
@@ -84,7 +92,7 @@ class Vector3D:
             self.__y += v.y()
             self.__z += v.z()
         elif isinstance(v, Vector2D):
-            v0 = v.to3D()
+            v0 = v.project3D()
             self.__x += v0.x()
             self.__y += v0.y()
             self.__z += v0.z()
