@@ -53,3 +53,42 @@ class Vector2D:
 
     def orth(self):
         return (Vector2D(-self.__y, self.__x), Vector2D(self.__y, -self.__x))
+
+    def to3D(self):
+        return Vector3D(self.__x, self.__y, 0)
+
+class Vector3D:
+    def __init__(self, x, y, z):
+        self.__x = x;
+        self.__y = y;
+        self.__z = z;
+
+    def x(self):
+        return self.__x
+
+    def y(self):
+        return self.__y
+
+    def z(self):
+        return self.__z
+
+    def mag(self):
+        return math.sqrt(self.__x**2+self.__y**2+self.__z**2)
+
+    def msgSq(self):
+        return self.__x**2+self.__y**2+self.__z**2
+
+    def add(self, v):
+        if isinstance(v, Vector3D):
+            self.__x += v.x()
+            self.__y += v.y()
+            self.__z += v.z()
+        elif isinstance(v, Vector2D):
+            v0 = v.to3D()
+            self.__x += v0.x()
+            self.__y += v0.y()
+            self.__z += v0.z()
+        else:
+            self.__x += v
+            self.__y += v
+            self.__z += z
