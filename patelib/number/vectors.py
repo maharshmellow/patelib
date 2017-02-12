@@ -152,3 +152,18 @@ class Vector3D:
             return Vector2D(self.__y, self.__z)
         else:
             return Vector2D(self.__x, self.__y)
+
+
+### TEST CASES
+def test(func, expect, actual):
+    print("." + func + "(): " + "Expecting " + expect + ", got " + actual + "\t" + (expect==actual))
+
+v = Vector2D(2, 3.5)
+test("x", 2, v.x())
+test("y", 3.5, v.y())
+v = Vector2D(3, 4)
+test("mag", 5, v.mag())
+test("magSq", 25, v.magSq())
+v1 = v.neg()
+test("neg", -3, v1.x())
+test("neg", -4, v1.y())
