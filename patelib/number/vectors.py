@@ -132,6 +132,12 @@ class Vector3D:
         else:
             return self.__x*v.x()+self.__y*v.y()+self.__z*v.z()
 
+    def cross(self, v):
+        x = self.__y*v.z()-self.__z*v.y()
+        y = -(self.__x*v.z()-self.__z*v.x())
+        z = self.__x*v.y()-self.__y*v.x()
+        return Vector3D(x, y, z) 
+
     def unit(self):
         m=mag()
         return Vector2D(self.__x/m, self.__y/m, self.__z/m)
